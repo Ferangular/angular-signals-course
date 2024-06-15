@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "localBackend": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
+    "backend": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

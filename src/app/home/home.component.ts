@@ -21,4 +21,35 @@ import {toObservable, toSignal, outputToObservable, outputFromObservable} from "
 })
 export class HomeComponent {
 
+  #courses = signal<Course[]>([]);
+
+  coursesService = inject(CoursesService);
+
+  dialog = inject(MatDialog);
+
+
+
+  onCourseDeleted($event: Event) {
+throw new Error('Method not implemented.');
+}
+advancedCourses() {
+throw new Error('Method not implemented.');
+}
+beginnerCourses() {
+throw new Error('Method not implemented.');
+}
+onCourseUpdated($event: Event) {
+throw new Error('Method not implemented.');
+}
+onToSignalExample() {
+throw new Error('Method not implemented.');
+}
+onToObservableExample() {
+throw new Error('Method not implemented.');
+}
+onAddCourse() {
+throw new Error('Method not implemented.');
+}
+
+
 }
