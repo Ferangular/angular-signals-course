@@ -1,13 +1,14 @@
 import {Component, computed, effect, inject, Injector, signal} from '@angular/core';
 import {CoursesService} from "../services/courses.service";
-import {Course, sortCoursesBySeqNo} from "../models/course.model";
+import {Course} from "../models/course.model";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {CoursesCardListComponent} from "../courses-card-list/courses-card-list.component";
 import {MatDialog} from "@angular/material/dialog";
-import {MessagesService} from "../messages/messages.service";
-import {catchError, from, throwError} from "rxjs";
-import {toObservable, toSignal, outputToObservable, outputFromObservable} from "@angular/core/rxjs-interop";
 
+
+type Counter = {
+  value: number;
+}
 @Component({
   selector: 'home',
   standalone: true,
@@ -26,6 +27,15 @@ export class HomeComponent {
   coursesService = inject(CoursesService);
 
   dialog = inject(MatDialog);
+
+
+counter = signal<Counter>({
+  value: 0
+})
+
+increment(){
+this.counter.update(c => ({...c, value: c.value + 1}));
+}
 
 
 

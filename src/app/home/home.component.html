@@ -1,6 +1,6 @@
 <div class="courses-panel">
 
-  <h3>All Courses:</h3>
+  <h3>All Courses:{{counter().value }}</h3>
 
   <button class="btn" (click)="onAddCourse()">
     Add Course
@@ -12,6 +12,9 @@
 
   <button class="btn" (click)="onToSignalExample()">
     toSignal()
+  </button>
+  <button class="btn" (click)="increment()">
+  Increment
   </button>
 
   <mat-tab-group>
