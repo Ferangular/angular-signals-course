@@ -5,8 +5,8 @@ import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatIcon} from "@angular/material/icon";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatIconButton} from "@angular/material/button";
-import {LoadingIndicatorComponent} from "./loading/loading.component";
-import {MessagesComponent} from "./messages/messages.component";
+import {LoadingIndicatorComponent} from "./libs/ui/loading/loading.component";
+import {MessagesComponent} from "./libs/ui/messages/messages.component";
 
 
 @Component({
