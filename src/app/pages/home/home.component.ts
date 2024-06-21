@@ -79,6 +79,10 @@ constructor() {
     try {
       const courses = await this.coursesService.loadAllCourses();
       this.#courses.set(courses.sort(sortCoursesBySeqNo));
+      this.messageService.showMessage(
+        `All courses loaded!`,
+        "success"
+      );
     }
     catch(err) {
       this.messageService.showMessage(

@@ -4,15 +4,19 @@ import {LoadingService} from "./loading.service";
 
 @Component({
   selector: "loading",
-  templateUrl: "./loading.component.html",
-  styleUrls: ["./loading.component.scss"],
   imports: [MatProgressSpinner],
   standalone: true,
+  template: `
+    @if (loading()) {
+      <div class="spinner-container">
+        <mat-spinner />
+      </div>
+    }
+  `,
+  styleUrls: ["./loading.component.scss"],
+
 })
 export class LoadingIndicatorComponent {
   loadingService = inject(LoadingService);
-
   loading = this.loadingService.loading;
-
-
 }
