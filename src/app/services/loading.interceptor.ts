@@ -5,13 +5,22 @@ import {finalize} from "rxjs";
 import {SkipLoading} from "../loading/skip-loading.component";
 
 
-export const loadingInterceptor: HttpInterceptorFn =
-  (req: HttpRequest<unknown>, next: HttpHandlerFn) => {
+export const loadingInterceptor: HttpInterceptorFn =  (req: HttpRequest<unknown>, next: HttpHandlerFn) => {
+  console.log('loadingInterceptor',req.context.get(SkipLoading))
+  /**
+   * Ejemplo CoursesService
+   * loadAllCourses()
+   *    {
+   *         context: new HttpContext().set(SkipLoading,true)
+   *       }
+   */
     if(req.context.get(SkipLoading)) {
+      console.log('loadingInterceptor if()',req.context.get(SkipLoading))
      return next(req);
     }
     const loadingService = inject(LoadingService);
     loadingService.loadingOn();
+    console.log('loadingInterceptor loadingService',loadingService)
     return next(req)
       .pipe(
         finalize(() => {
